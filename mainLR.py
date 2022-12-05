@@ -51,6 +51,7 @@ def get_data(file_location):
 
 
 def getConfusionMatrix(y_true, y_pred):
+    plt.figure()
     # Get the confusion matrix
     y_true = pd.Categorical(y_true.ravel())
     y_pred = pd.Categorical(y_pred.ravel())
