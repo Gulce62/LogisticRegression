@@ -101,9 +101,9 @@ maxBatchSize = batchSize[np.argmax(batchSizeAcc)]
 model = LR.LogisticRegression(epochs=100, learningRate=0.001, batchSize=maxBatchSize, initialization='gaussian')
 w, b = parameterList[np.argmax(batchSizeAcc)]
 y_pred = model.predict(w, b, X_test, 0.5)
+getConfusionMatrix(y_pred, y_test)
 title = 'Confusion Matrix for batch size = ' + str(maxBatchSize)
 plt.title(title)
-getConfusionMatrix(y_pred, y_test)
 
 # Find the optimal initialization
 initializationType = ['gaussian', 'uniform', 'zero']
@@ -126,9 +126,9 @@ maxInitialization = initializationType[np.argmax(initializationAcc)]
 model = LR.LogisticRegression(epochs=100, learningRate=0.001, batchSize=64, initialization=maxInitialization)
 w, b = parameterList[np.argmax(initializationAcc)]
 y_pred = model.predict(w, b, X_test, 0.5)
+getConfusionMatrix(y_pred, y_test)
 title = 'Confusion Matrix for ' + str(maxInitialization) + ' initialization'
 plt.title(title)
-getConfusionMatrix(y_pred, y_test)
 
 # Find the optimal learning rate
 learningRate = [1, 0.001, 0.0001, 0.00001]
@@ -151,9 +151,9 @@ maxLearningRate = learningRate[np.argmax(learningRateAcc)]
 model = LR.LogisticRegression(epochs=100, learningRate=maxLearningRate, batchSize=64, initialization='gaussian')
 w, b = parameterList[np.argmax(learningRateAcc)]
 y_pred = model.predict(w, b, X_test, 0.5)
+getConfusionMatrix(y_pred, y_test)
 title = 'Confusion Matrix for learning rate = ' + str(maxLearningRate)
 plt.title(title)
-getConfusionMatrix(y_pred, y_test)
 
 # Final training with the best hyperparameters
 print('\nStart final training with best parameters\n')
