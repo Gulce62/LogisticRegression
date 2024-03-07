@@ -1,4 +1,4 @@
-# LogisticRegression
+# CS 464 Homework 2 LogisticRegression
 
 Required programming language: Python (Python3 needs to be installed on the computer)
 
